@@ -1,0 +1,10 @@
+services:
+  cert-copier:
+    image: cert-copier:latest
+    container_name: cert-copier
+    volumes:
+        - duckpins_letsencrypt:/certs
+
+volumes:
+  duckpins_letsencrypt:
+    external: true
