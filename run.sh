@@ -10,7 +10,7 @@ do
   for d in $CERTPATH/*/
     do
       echo "Updating host $d..."
-      cp $d\privkey.pem $d.key
-      cp $d\fullchain.pem $d.crt
+      ln -s $d\privkey.pem $d.key
+      ln -s $d\fullchain.pem $d.crt
    done
 done
