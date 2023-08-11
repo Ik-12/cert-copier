@@ -1,9 +1,9 @@
 # Dockerfile for a copying SSL cert files to correct name for nginx proxy
-FROM alpine:latest
+FROM bitnami/minideb
 MAINTAINER Ilkka Kujamaki ikujamaki@gmail.com
 
-RUN apk update && apk upgrade && \
-    apk add bash fswatch
+RUN apt update && apt upgrade && \
+    install_packages bash fswatch
 
 COPY run.sh /
 RUN chmod +x /run.sh
